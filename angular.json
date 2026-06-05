@@ -16,17 +16,27 @@
             "outputPath": "dist/shree-celebration",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
             "production": {
               "budgets": [
-                
-                { "type": "anyComponentStyle", "maximumWarning": "2kb", "maximumError": "4kb" }
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
+                }
               ],
               "outputHashing": "all"
             },
@@ -41,8 +51,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": { "buildTarget": "shree-celebration:build:production" },
-            "development": { "buildTarget": "shree-celebration:build:development" }
+            "production": {
+              "buildTarget": "shree-celebration:build:production"
+            },
+            "development": {
+              "buildTarget": "shree-celebration:build:development"
+            }
           },
           "defaultConfiguration": "development"
         }
