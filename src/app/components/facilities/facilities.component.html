@@ -1,0 +1,32 @@
+<section class="section facilities-section" id="facilities">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="section-header reveal">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">World-Class Facilities</h2>
+      <div class="divider-gold"><span>❋</span></div>
+      <p class="section-subtitle">
+        Every detail thoughtfully arranged so you can focus on celebrating,
+        while we handle everything else with perfection.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="facilities-grid">
+      <div class="facility-card reveal" *ngFor="let f of facilities; let i = index"
+           [style.animation-delay]="(i * 0.1) + 's'">
+        <div class="card-glow"></div>
+        <div class="facility-icon">
+          <i [class]="f.icon"></i>
+        </div>
+        <div class="card-content">
+          <h3 class="facility-title">{{ f.title }}</h3>
+          <p class="facility-desc">{{ f.description }}</p>
+          <span class="facility-badge" *ngIf="f.highlight">{{ f.highlight }}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

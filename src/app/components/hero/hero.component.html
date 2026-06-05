@@ -1,0 +1,72 @@
+<section class="hero" id="hero">
+
+  <!-- Background layers -->
+  <div class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-pattern"></div>
+  </div>
+
+  <!-- Decorative elements -->
+  <div class="deco deco-1">✦</div>
+  <div class="deco deco-2">✦</div>
+  <div class="corner-frame corner-tl"></div>
+  <div class="corner-frame corner-tr"></div>
+  <div class="corner-frame corner-bl"></div>
+  <div class="corner-frame corner-br"></div>
+
+  <!-- Main content -->
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span>✦</span>
+      <span>Premium Event Venue</span>
+      <span>✦</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="title-line-1">Where Every</span>
+      <span class="title-line-2">Celebration</span>
+      <span class="title-line-3">Becomes a Memory</span>
+    </h1>
+
+    <div class="hero-divider">
+      <div class="line"></div>
+      <span class="ornament">❋</span>
+      <div class="line"></div>
+    </div>
+
+    <p class="hero-sub">
+      Shree Celebration — Nagpur's premier outdoor event lawn,<br>
+      crafted for weddings, receptions & grand occasions.
+    </p>
+
+    <div class="hero-actions">
+      <button class="btn-primary" (click)="scrollTo('#contact')">
+        <i class="fa-solid fa-calendar-check"></i>
+        Book Your Date
+      </button>
+      <button class="btn-outline" (click)="scrollTo('#gallery')">
+        <i class="fa-regular fa-images"></i>
+        View Gallery
+      </button>
+    </div>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="hero-stats">
+    <div class="stats-inner">
+      <div class="stat" *ngFor="let s of stats">
+        <span class="stat-value">{{ s.value }}</span>
+        <span class="stat-label">{{ s.label }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator" (click)="scrollTo('#facilities')">
+    <span>Explore</span>
+    <div class="scroll-arrow">
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </div>
+
+</section>

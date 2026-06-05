@@ -1,0 +1,49 @@
+<section class="section gallery-section" id="gallery">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <span class="section-label">Captured Moments</span>
+      <h2 class="section-title">Our Gallery</h2>
+      <div class="divider-gold"><span>❋</span></div>
+      <p class="section-subtitle">Relive the magic of events celebrated at Shree Celebration.</p>
+    </div>
+
+    <div class="gallery-filters reveal">
+      <button
+        *ngFor="let cat of categories"
+        class="filter-btn"
+        [class.active]="activeCategory === cat"
+        (click)="setCategory(cat)">
+        {{ cat }}
+      </button>
+    </div>
+
+    <div class="gallery-grid">
+      <div
+        class="gallery-item "
+        *ngFor="let item of getItems()"
+        (click)="openLightbox(item)">
+        <img [src]="item.url" [alt]="item.caption">
+        <div class="gallery-overlay">
+          <div class="overlay-content">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>{{ item.caption }}</span>
+            <em>{{ item.category }}</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="lightbox" [class.open]="lightboxOpen" (click)="closeLightbox()">
+    <div class="lightbox-inner" (click)="$event.stopPropagation()">
+      <button class="lb-close" (click)="closeLightbox()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img [src]="lightboxImg" [alt]="lightboxCaption">
+      <p class="lb-caption">{{ lightboxCaption }}</p>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,57 @@
+<section class="section pricing-section" id="pricing">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <span class="section-label">Transparent Pricing</span>
+      <h2 class="section-title">Choose Your Package</h2>
+      <div class="divider-gold"><span>❋</span></div>
+      <p class="section-subtitle">
+        Every package is customizable. Contact us to build the perfect plan for your occasion.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+      <div
+        class="pricing-card reveal"
+        *ngFor="let plan of plans"
+        [class.popular]="plan.popular">
+
+        <div class="popular-badge" *ngIf="plan.popular">
+          <i class="fa-solid fa-star"></i> Most Popular
+        </div>
+
+        <div class="plan-header">
+          <div class="plan-ornament">✦</div>
+          <h3 class="plan-name">{{ plan.name }}</h3>
+          <div class="plan-tag">{{ plan.tag }}</div>
+          <div class="plan-price">
+            <span class="price-amount">{{ plan.price }}</span>
+            <span class="price-dur">{{ plan.duration }}</span>
+          </div>
+        </div>
+
+        <div class="plan-divider"></div>
+
+        <ul class="plan-features">
+          <li *ngFor="let f of plan.features">
+            <i class="fa-solid fa-circle-check"></i>
+            {{ f }}
+          </li>
+        </ul>
+
+        <button class="plan-cta" [class.cta-gold]="plan.popular" (click)="scrollTo('#contact')">
+          Book This Package
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <p class="pricing-note reveal">
+      <i class="fa-solid fa-circle-info"></i>
+      All prices are indicative. Final pricing depends on guest count, catering selection, and specific requirements.
+      <strong>GST extra as applicable.</strong>
+    </p>
+
+  </div>
+</section>

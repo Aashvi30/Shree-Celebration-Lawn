@@ -1,0 +1,37 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="navbar-inner">
+
+    <!-- Brand -->
+    <a class="brand" (click)="scrollTo('#hero')">
+      <div class="brand-emblem">
+        <span class="emblem-icon">✦</span>
+         <!-- <img src="assets/images/shree-celebration-logo.svg" alt="Shree Celebration" class="navbar-logo"> -->
+      </div>
+      <div class="brand-text">
+        <span class="brand-name">Shree Celebration</span>
+        <span class="brand-tagline">Premier Event Lawn</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="nav-links" [class.open]="menuOpen">
+      <li *ngFor="let link of navLinks">
+        <a (click)="scrollTo(link.href)">{{ link.label }}</a>
+      </li>
+      <li>
+        <a class="nav-cta" (click)="scrollTo('#contact')">Book Now</a>
+      </li>
+    </ul>
+
+    <!-- Hamburger -->
+    <button class="hamburger" (click)="toggleMenu()" [class.active]="menuOpen" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile Overlay -->
+<div class="mobile-overlay" [class.visible]="menuOpen" (click)="toggleMenu()"></div>
